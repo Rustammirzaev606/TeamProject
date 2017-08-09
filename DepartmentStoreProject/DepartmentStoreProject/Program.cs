@@ -10,6 +10,7 @@ namespace DepartmentStoreProject
     {
         static void Main(string[] args)
         {
+            //HI THERE
         }
     }
 }
