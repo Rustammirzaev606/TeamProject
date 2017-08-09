@@ -14,19 +14,11 @@ namespace DepartmentStoreProject
         public string Section;
         public int Price;
 
-        public void FullStoreName()
-        {
-
-            Console.WriteLine($"Hello and Welcome to {Store}");
-
-        }
-
-        public void 
-             
+    }   
 
 
 
 
 
-    }
+    
 }
