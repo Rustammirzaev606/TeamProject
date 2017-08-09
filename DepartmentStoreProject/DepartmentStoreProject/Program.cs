@@ -11,7 +11,13 @@
 //3. blah: price
 //4. blah: price
 //5. blah: price
-//6. blah: price
+//6. blah: price discount
+
+
+
+
+
+
 
 using System;
 using System.Collections.Generic;
@@ -23,6 +29,17 @@ namespace DepartmentStoreProject
 {
     class Program
     {
+        enum
+
+        //enum
+
+
+
+
+
+
+
+
         static void Main(string[] args)
         {
             //HI THERE
