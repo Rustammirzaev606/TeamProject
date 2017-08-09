@@ -193,6 +193,22 @@ namespace DepartmentStoreProject
 
                 break;
 
+                case hats.Fedoras:
+
+
+
+                break;
+                case hats.Boaters:
+
+
+                break;
+
+
+                case hats.Beanies:
+
+
+
+                break;
 
             }
         }
