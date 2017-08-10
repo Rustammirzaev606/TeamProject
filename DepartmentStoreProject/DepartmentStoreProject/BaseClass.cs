@@ -14,14 +14,19 @@ namespace DepartmentStoreProject
         public double Size { get; set; }
         public double Price { get; set; }
         public double Subtotal { get; set; }
-        public double Discount { get; set; }
+        public bool Discount { get; set; } = false;
         public double DiscountRate { get; set; }
         
+
 
         public void PrintMethod()
         {
 
-            Console.WriteLine(String.Format($"{ID}  {Name, 3}, {Color.PadLeft(30)}, {Size}, {Price.ToString("C")}"), 51);
+            //Console.WriteLine(String.Format($"{ID}  {Name, 3}, {Color.PadLeft(30)}, {Size}, {Price.ToString("C")}"), 51);
+            Console.Write(String.Format($"{ID}  {Name.PadRight(20, '.')}"));
+            Console.WriteLine($"{Color.PadRight(5, '.')}, {Size, 5}, {Price.ToString("C")}");
+
+
 
         }
     }
