@@ -78,7 +78,7 @@ namespace DepartmentStoreProject
 
             }
 
-
+            Console.ReadLine();
 
 
 
