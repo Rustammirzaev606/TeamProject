@@ -34,9 +34,8 @@ namespace DepartmentStoreProject
     {        
         static void Main(string[] args)
         {
-            Pants qwe = new Pants();
-            qwe.Somepants();
-            Console.ReadLine();
+            Pants panties = new Pants();
+            Shirts shierties = new Shirts();
             
             string inputChoice;
             int inputNumb;
@@ -59,13 +58,13 @@ namespace DepartmentStoreProject
                 {
                     case Genres.Shoes:
                         //call method1
-                        Console.WriteLine("123");
+                        
                         break;
                     case Genres.Pants:
-                        Console.WriteLine("123");
+                        panties.Somepants();
                         break;
                     case Genres.Shirts:
-                        Console.WriteLine("123");
+                        shierties.Someshirts();
                         break;
                     case Genres.Hats:
                         Console.WriteLine("123");
