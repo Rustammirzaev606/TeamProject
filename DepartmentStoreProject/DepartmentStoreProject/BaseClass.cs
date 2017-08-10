@@ -21,7 +21,7 @@ namespace DepartmentStoreProject
         public void Asd()
         {
 
-            Console.WriteLine($"{ID,45}  {Name, 3}, {Color}, {Size}, {Price.ToString("C")}");
+            Console.WriteLine($"{ID}  {Name, 3}, {Color}, {Size}, {Price.ToString("C")}");
 
         }
     }
