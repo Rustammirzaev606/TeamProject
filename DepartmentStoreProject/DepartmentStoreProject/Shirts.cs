@@ -31,6 +31,7 @@ namespace DepartmentStoreProject
             LongSleeves.Price = 9.00;
 
 
+
            Shirts ShortSleeves = new Shirts();
 
             ShortSleeves.Name = "Short Sleeves";
@@ -38,6 +39,9 @@ namespace DepartmentStoreProject
             ShortSleeves.Color = "Orange";
             ShortSleeves.Size = 10;
             ShortSleeves.Price = 27.99;
+            ShortSleeves.Discount = true;
+            ShortSleeves.DiscountRate = 0.25;
+
 
             Shirts TShirts = new Shirts();
 
@@ -85,8 +89,14 @@ namespace DepartmentStoreProject
                 foreach (KeyValuePair<int, Shirts> item in dicShirt)
                 {
                     Shirts ListOfShirts = item.Value;
-                    ListOfShirts.PrintMethod();
-
+                    if (ListOfShirts.Discount == true)
+                    {
+                        ListOfShirts.PrintDiscount();
+                    }
+                    else
+                    {
+                        ListOfShirts.PrintMethod();
+                    }
                 }
                 Console.WriteLine("Please select an item.");
                 input = Console.ReadLine();
@@ -97,9 +107,14 @@ namespace DepartmentStoreProject
                     foreach (KeyValuePair<int, Shirts> item in dicShirt)
                     {
                         Shirts ListOfShirts = item.Value;
-                        ListOfShirts.PrintMethod();
-
-
+                        if (ListOfShirts.Discount == true)
+                        {
+                            ListOfShirts.PrintDiscount();
+                        }
+                        else
+                        {
+                            ListOfShirts.PrintMethod();
+                        }
                     }
                     input = Console.ReadLine();
                     int.TryParse(input, out inputNumb);
@@ -123,8 +138,8 @@ namespace DepartmentStoreProject
                         Console.WriteLine($"We have added {LongSleeves.Name} to your cart.");
                         break;
                     case Shiert.ShortSleeves:
-                        Subtotal += ShortSleeves.Price;
-                        addSubtotal = ShortSleeves.Price;
+                        Subtotal += ShortSleeves.NewPrice;
+                        Savings = ShortSleeves.Price - ShortSleeves.NewPrice;
                         Console.WriteLine($"We have added {ShortSleeves.Name} to your cart.");
                         break;
                     case Shiert.Sweaters:

@@ -16,18 +16,22 @@ namespace DepartmentStoreProject
         public double Subtotal { get; set; }
         public bool Discount { get; set; } = false;
         public double DiscountRate { get; set; }
-        
+        public double Savings { get; set; }
+        public double NewPrice { get; set; }
 
 
         public void PrintMethod()
         {
-
             //Console.WriteLine(String.Format($"{ID}  {Name, 3}, {Color.PadLeft(30)}, {Size}, {Price.ToString("C")}"), 51);
             Console.Write(String.Format($"{ID}  {Name.PadRight(20, '.')}"));
             Console.WriteLine($"{Color.PadRight(5, '.')}, {Size, 5}, {Price.ToString("C")}");
-
-
-
+        }
+        public void PrintDiscount()
+        {
+            Savings += Price * DiscountRate;
+            NewPrice = Price - Price * DiscountRate;
+            Console.Write(String.Format($"{ID}  {Name.PadRight(20, '.')}"));
+            Console.WriteLine($"{Color.PadRight(5, '.')}, {Size,5}, {Price.ToString("C")}  **THIS ITEM IS ON SALE!!** New Price {NewPrice.ToString("C")}");
         }
     }
 }    

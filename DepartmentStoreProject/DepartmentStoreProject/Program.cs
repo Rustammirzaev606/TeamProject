@@ -37,14 +37,16 @@ namespace DepartmentStoreProject
             ShoesAndHeels ShoesAndHeels = new ShoesAndHeels();
             Pants panties = new Pants();
             Shirts shierties = new Shirts();
+            Hats haties = new Hats();
 
             
             string inputChoice;
             int inputNumb;
             double total;
+            double savings;
             
             
-            string exit = "exit";
+            string exit;
             Console.WriteLine("Hello! Welcome to Rustam & Dorrell's Clothing Emporium!");
             do
             {
@@ -74,11 +76,13 @@ namespace DepartmentStoreProject
                         Console.WriteLine("123");
                         break;
                 }
-
-            } while (!(exit == "exit"));
-            total = shierties.Subtotal + ShoesAndHeels.Subtotal + panties.Subtotal;
+                Console.WriteLine("press enter to continue shopping or type CHECK OUT to finish"); //needs changes
+                exit = Console.ReadLine().ToLower();
+                total = ShoesAndHeels.Subtotal + panties.Subtotal + shierties.Subtotal + haties.Subtotal;
+                savings = shierties.Savings + panties.Savings + ShoesAndHeels.Savings + haties.Savings;
+            } while (exit == "checkout" ^ exit != "check out");
             
-            Console.WriteLine($"Your grand total comes to {total}.");
+            Console.WriteLine($"Your grand total comes to {total.ToString("C")}. Your savings are {savings.ToString("C")}."); //needs changes. Math aint working yet.
             Console.ReadLine();
             
             //method1
