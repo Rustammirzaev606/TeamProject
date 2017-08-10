@@ -8,6 +8,19 @@ namespace DepartmentStoreProject
 {
     class ShoesAndHeels : BaseClass
     {
-        
+
+        public void demshoes()
+        {
+
+            ShoesAndHeels demshoes = new ShoesAndHeels();
+
+
+
+        }
+
+
+
+
+
     }
 }
