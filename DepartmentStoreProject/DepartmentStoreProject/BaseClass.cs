@@ -13,11 +13,12 @@ namespace DepartmentStoreProject
         public string Color { get; set; }
         public double Size { get; set; }
         public double Price { get; set; }
+        public double Subtotal { get; set; }
 
         public void Asd()
         {
 
-            Console.WriteLine($"{Name} {Color} {Size} {Price}");
+            Console.WriteLine($"{ID,45}  {Name, 3}, {Color}, {Size}, {Price.ToString("C")}");
 
         }
     }
