@@ -6,10 +6,22 @@ using System.Threading.Tasks;
 
 namespace DepartmentStoreProject
 {
+    enum HatsEnum
+    {
+        BaseballCaps = 1,
+        Fedoras,
+        Boaters,
+        Beanies,
+        Homburg,
+        TopHats
+    }
     class Hats : BaseClass
     {
         public void Somehat()
         {
+            int inputNumb;
+            string input;
+            double addSubtotal = 0;
             Hats BaseballCaps = new Hats();
 
             BaseballCaps.Name = "Baseball Caps";
@@ -68,15 +80,72 @@ namespace DepartmentStoreProject
             HeadGear.Add(TopHats.ID, TopHats);
 
 
-            Console.WriteLine("Here is the line of hats we have:");
-
-            foreach(KeyValuePair<int, Hats> item in HeadGear)
+            do
             {
-                Hats asd = item.Value;
-                asd.Asd();
+                Console.Clear();
+                Console.WriteLine("Here is stuff we have:");
+                foreach (KeyValuePair<int, Hats> item in HeadGear)
+                {
+                    Hats ListOfHats = item.Value;
+                    ListOfHats.PrintMethod();
 
+                }
+                Console.WriteLine("Select an item");
+                input = Console.ReadLine();
+                int.TryParse(input, out inputNumb);
+                while (!int.TryParse(input, out inputNumb))
+                {
+                    Console.WriteLine("Wrong input. Select a number");
+                    foreach (KeyValuePair<int, Hats> item in HeadGear)
+                    {
+                        Hats ListOfHats = item.Value;
+                        ListOfHats.PrintMethod();
+
+
+                    }
+                    input = Console.ReadLine();
+                    int.TryParse(input, out inputNumb);
+
+                }
+                switch ((HatsEnum)inputNumb)
+                {
+                    case HatsEnum.BaseballCaps:
+                        Subtotal += BaseballCaps.Price;
+                        addSubtotal = BaseballCaps.Price;
+                        Console.WriteLine($"We added {BaseballCaps.Name} to your cart");
+                        break;
+                    case HatsEnum.Fedoras:
+                        Subtotal += BaseballCaps.Price;
+                        addSubtotal = BaseballCaps.Price;
+                        Console.WriteLine($"We added {BaseballCaps.Name} to your cart");
+                        break;
+                    case HatsEnum.Boaters:
+                        Subtotal += Boaters.Price;
+                        addSubtotal = Boaters.Price;
+                        Console.WriteLine($"We added {Boaters.Name} to your cart");
+                        break;
+                    case HatsEnum.Beanies:
+                        Subtotal += Beanies.Price;
+                        addSubtotal = Beanies.Price;
+                        Console.WriteLine($"We added {Beanies.Name} to your cart");
+                        break;
+                    case HatsEnum.Homburg:
+                        Subtotal += Homburg.Price;
+                        addSubtotal = Homburg.Price;
+                        Console.WriteLine($"We added {Homburg.Name} to your cart");
+                        break;
+                    case HatsEnum.TopHats:
+                        Subtotal += TopHats.Price;
+                        addSubtotal = TopHats.Price;
+                        Console.WriteLine($"We added {TopHats.Name} to your cart");
+                        break;
+                    default:
+                        Console.WriteLine("WRONG INPUT!");
+                        break;
+                }
+
+                Console.WriteLine($"Press ENTER to continue or type EXIT to go to Department selection");
+                input = Console.ReadLine().ToLower();
             }
-            Console.ReadLine();
-        }
     }
 }

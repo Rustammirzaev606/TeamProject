@@ -71,21 +71,21 @@ namespace DepartmentStoreProject
             Hoodies.Size = 10.5;
             Hoodies.Price = 89.95;
 
-            Dictionary<int, Shirts> shiet = new Dictionary<int, Shirts>();
-            shiet.Add(LongSleeves.ID, LongSleeves);
-            shiet.Add(ShortSleeves.ID, ShortSleeves);
-            shiet.Add(TShirts.ID, TShirts);
-            shiet.Add(ButtonUps.ID, ButtonUps);
-            shiet.Add(Sweaters.ID, Sweaters);
-            shiet.Add(Hoodies.ID, Hoodies);
+            Dictionary<int, Shirts> dicShirt = new Dictionary<int, Shirts>();
+            dicShirt.Add(LongSleeves.ID, LongSleeves);
+            dicShirt.Add(ShortSleeves.ID, ShortSleeves);
+            dicShirt.Add(TShirts.ID, TShirts);
+            dicShirt.Add(ButtonUps.ID, ButtonUps);
+            dicShirt.Add(Sweaters.ID, Sweaters);
+            dicShirt.Add(Hoodies.ID, Hoodies);
             do
             {
                 Console.Clear();
                 Console.WriteLine("Here is stuff we have:");
-                foreach (KeyValuePair<int, Shirts> item in shiet)
+                foreach (KeyValuePair<int, Shirts> item in dicShirt)
                 {
-                    Shirts asd = item.Value;
-                    asd.Asd();
+                    Shirts ListOfShirts = item.Value;
+                    ListOfShirts.PrintMethod();
 
                 }
                 Console.WriteLine("Select an item");
@@ -94,10 +94,10 @@ namespace DepartmentStoreProject
                 while (!int.TryParse(input, out inputNumb))
                 {
                     Console.WriteLine("Wrong input. Select a number");
-                    foreach (KeyValuePair<int, Shirts> item in shiet)
+                    foreach (KeyValuePair<int, Shirts> item in dicShirt)
                     {
-                        Shirts asd = item.Value;
-                        asd.Asd();
+                        Shirts ListOfShirts = item.Value;
+                        ListOfShirts.PrintMethod();
 
 
                     }
@@ -136,6 +136,9 @@ namespace DepartmentStoreProject
                         Subtotal += TShirts.Price;
                         addSubtotal = TShirts.Price;
                         Console.WriteLine($"We added {TShirts.Name} to your cart");
+                        break;
+                    default:
+                        Console.WriteLine("WRONG INPUT!");
                         break;
                 }
                 

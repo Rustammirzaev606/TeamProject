@@ -34,9 +34,10 @@ namespace DepartmentStoreProject
     {        
         static void Main(string[] args)
         {
-            
+            ShoesAndHeels ShoesAndHeels = new ShoesAndHeels();
             Pants panties = new Pants();
             Shirts shierties = new Shirts();
+
             
             string inputChoice;
             int inputNumb;
@@ -59,8 +60,9 @@ namespace DepartmentStoreProject
                 switch ((Genres)inputNumb)
                 {
                     case Genres.Shoes:
-                        //call method1
-                        
+                        ShoesAndHeels.demshoes();
+
+
                         break;
                     case Genres.Pants:
                         panties.Somepants();
@@ -74,7 +76,7 @@ namespace DepartmentStoreProject
                 }
 
             } while (!(exit == "exit"));
-            total = shierties.Subtotal;
+            total = shierties.Subtotal + ShoesAndHeels.Subtotal + panties.Subtotal;
             
             Console.WriteLine($"Your total is {total}");
             Console.ReadLine();

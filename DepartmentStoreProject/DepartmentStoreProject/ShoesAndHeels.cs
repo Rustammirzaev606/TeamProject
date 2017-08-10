@@ -6,17 +6,29 @@ using System.Threading.Tasks;
 
 namespace DepartmentStoreProject
 {
-    
+    enum ShoesEnum
+    {
+        Slippers = 1,
+        Sneakers,
+        Boots,
+        Sandals,
+        DressShoes,
+        TapShoes
+
+    }
     class ShoesAndHeels : BaseClass
     {
 
         public void demshoes()
         {
+            int inputNumb;
+            string input;
+            double addSubtotal = 0;
 
             ShoesAndHeels Slippers = new ShoesAndHeels();
 
             Slippers.Name = "Slippers";
-            Slippers.ID = 301;
+            Slippers.ID = 1;
             Slippers.Color = "Pink";
             Slippers.Size = 6;
             Slippers.Price = 4.99;
@@ -24,7 +36,7 @@ namespace DepartmentStoreProject
             ShoesAndHeels Sneakers = new ShoesAndHeels();
 
             Sneakers.Name = "Sneakers";
-            Sneakers.ID = 302;
+            Sneakers.ID = 2;
             Sneakers.Color = "White";
             Sneakers.Size = 10;
             Sneakers.Price = 39.99;
@@ -32,7 +44,7 @@ namespace DepartmentStoreProject
             ShoesAndHeels Boots = new ShoesAndHeels();
 
             Boots.Name = "Boots";
-            Boots.ID = 303 ;
+            Boots.ID = 3 ;
             Boots.Color = "Black";
             Boots.Size = 12;
             Boots.Price = 49.99;
@@ -40,7 +52,7 @@ namespace DepartmentStoreProject
             ShoesAndHeels Sandals = new ShoesAndHeels();
 
             Sandals.Name = "Sandals";
-            Sandals.ID = 304;
+            Sandals.ID = 4;
             Sandals.Color = "Brown";
             Sandals.Size = 11.5;
             Sandals.Price = 9.99;
@@ -48,7 +60,7 @@ namespace DepartmentStoreProject
             ShoesAndHeels DressShoes = new ShoesAndHeels();
 
             DressShoes.Name = "Dress Shoes";
-            DressShoes.ID =305 ;
+            DressShoes.ID = 5;
             DressShoes.Color = "Black";
             DressShoes.Size = 10.5;
             DressShoes.Price = 59.99;
@@ -56,7 +68,7 @@ namespace DepartmentStoreProject
             ShoesAndHeels TapShoes = new ShoesAndHeels();
 
             TapShoes.Name = "Tap Shoes";
-            TapShoes.ID = 306;
+            TapShoes.ID = 6;
             TapShoes.Color = "Black/White";
             TapShoes.Size = 11.5;
             TapShoes.Price = 69.99;
@@ -73,10 +85,80 @@ namespace DepartmentStoreProject
 
             foreach (KeyValuePair<int, ShoesAndHeels> item in Footwear)
             {
-                ShoesAndHeels asd = item.Value;
-                asd.Asd();
+                ShoesAndHeels ListOfFootwear = item.Value;
+                ListOfFootwear.PrintMethod();
 
             }
+
+            do
+            {
+                Console.Clear();
+                Console.WriteLine("Here is stuff we have:");
+                foreach (KeyValuePair<int, ShoesAndHeels> item in Footwear)
+                {
+                    ShoesAndHeels ListOfFootwear = item.Value;
+                    ListOfFootwear.PrintMethod();
+
+                }
+                Console.WriteLine("Select an item");
+                input = Console.ReadLine();
+                int.TryParse(input, out inputNumb);
+                while (!int.TryParse(input, out inputNumb))
+                {
+                    Console.WriteLine("Wrong input. Select a number");
+                    foreach (KeyValuePair<int, ShoesAndHeels> item in Footwear)
+                    {
+                        ShoesAndHeels ListOfFootwear = item.Value;
+                        ListOfFootwear.PrintMethod();
+
+
+                    }
+                    input = Console.ReadLine();
+                    int.TryParse(input, out inputNumb);
+
+                }
+                switch ((ShoesEnum)inputNumb)
+                {
+                    case ShoesEnum.Sneakers:
+                        Subtotal += Sneakers.Price;
+                        addSubtotal = Sneakers.Price;
+                        Console.WriteLine($"We added {Sneakers.Name} to your cart");
+                        break;
+                    case ShoesEnum.Boots:
+                        Subtotal += Boots.Price;
+                        addSubtotal = Boots.Price;
+                        Console.WriteLine($"We added {Boots.Name} to your cart");
+                        break;
+                    case ShoesEnum.Sandals:
+                        Subtotal += Sandals.Price;
+                        addSubtotal = Sandals.Price;
+                        Console.WriteLine($"We added {Sandals.Name} to your cart");
+                        break;
+                    case ShoesEnum.DressShoes:
+                        Subtotal += DressShoes.Price;
+                        addSubtotal = DressShoes.Price;
+                        Console.WriteLine($"We added {DressShoes.Name} to your cart");
+                        break;
+                    case ShoesEnum.TapShoes:
+                        Subtotal += TapShoes.Price;
+                        addSubtotal = TapShoes.Price;
+                        Console.WriteLine($"We added {TapShoes.Name} to your cart");
+                        break;
+                    case ShoesEnum.Slippers:
+                        Subtotal += Slippers.Price;
+                        addSubtotal = Slippers.Price;
+                        Console.WriteLine($"We added {Slippers.Name} to your cart");
+                        break;
+                    default:
+                        Console.WriteLine("WRONG INPUT!");
+                        break;
+
+                }
+
+                Console.WriteLine($"Press ENTER to continue or type EXIT to go to Department selection");
+                input = Console.ReadLine().ToLower();
+
+            } while (input != "exit");
 
 
 

@@ -18,10 +18,10 @@ namespace DepartmentStoreProject
         public double DiscountRate { get; set; }
         
 
-        public void Asd()
+        public void PrintMethod()
         {
 
-            Console.WriteLine($"{ID}  {Name, 3}, {Color}, {Size}, {Price.ToString("C")}");
+            Console.WriteLine(String.Format($"{ID}  {Name, 3}, {Color.PadLeft(30)}, {Size}, {Price.ToString("C")}"), 51);
 
         }
     }
