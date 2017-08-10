@@ -59,23 +59,23 @@ namespace DepartmentStoreProject
             CargoPants.Size = 37.35;
             CargoPants.Price = 17.49;
 
-            Dictionary<int, Pants> Panties = new Dictionary<int, Pants>();
-            Panties.Add(jeans.ID, jeans);
-            Panties.Add(DressPants.ID, DressPants);
-            Panties.Add(Khakis.ID, Khakis);
-            Panties.Add(Shorts.ID, Shorts);
-            Panties.Add(CargoPants.ID, CargoPants);
-            Panties.Add(SweatPants.ID, SweatPants);
+            Dictionary<int, Pants> Pantalones = new Dictionary<int, Pants>();
+            Pantalones.Add(jeans.ID, jeans);
+            Pantalones.Add(DressPants.ID, DressPants);
+            Pantalones.Add(Khakis.ID, Khakis);
+            Pantalones.Add(Shorts.ID, Shorts);
+            Pantalones.Add(CargoPants.ID, CargoPants);
+            Pantalones.Add(SweatPants.ID, SweatPants);
 
             Console.WriteLine("Here is stuff we have:");
-            foreach (KeyValuePair<int, Pants> item in Panties)
+            foreach (KeyValuePair<int, Pants> item in Pantalones)
             {
                 Pants asd = item.Value;
                 asd.Asd();
                 
             }
 
-
+            Console.ReadLine();
         }
        
     }    
