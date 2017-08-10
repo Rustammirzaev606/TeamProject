@@ -51,13 +51,13 @@ namespace DepartmentStoreProject
             do
             {
                 
-                Console.WriteLine("How may we assist you today?:\n1 - Shoes:\n2 - Pants:\n3 - Shirts:\n4 - Hats:", 70);
+                Console.WriteLine("How may we assist you today? \n1 - Shoes:\n2 - Pants:\n3 - Shirts:\n4 - Hats:", 70);
                 inputChoice = Console.ReadLine();
                 int.TryParse(inputChoice, out inputNumb);
                 while (!int.TryParse(inputChoice, out inputNumb))
                 {
 
-                    Console.WriteLine("I am sorry for the inconvenience, But I do not recognize your answer. Please select an appropriate department.:\n1 - Shoes:\n2 - Pants:\n3 - Shirts:\n4 - Hats:");
+                    Console.WriteLine("I am sorry for the inconvenience, But I do not recognize your answer. Please select an appropriate department:\n1 - Shoes:\n2 - Pants:\n3 - Shirts:\n4 - Hats:");
                 }
                 switch ((Genres)inputNumb)
                 {
