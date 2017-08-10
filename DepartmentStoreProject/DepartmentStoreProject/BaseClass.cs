@@ -12,6 +12,13 @@ namespace DepartmentStoreProject
         public int ID { get; set; }
         public string Color { get; set; }
         public double Size { get; set; }
-        public double Price { get; set; }  
+        public double Price { get; set; }
+
+        public void Asd()
+        {
+
+            Console.WriteLine($"{Name} {Color} {Size} {Price}");
+
+        }
     }
 }    

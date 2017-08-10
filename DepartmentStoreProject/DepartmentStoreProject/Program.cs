@@ -1,216 +1,85 @@
 ﻿
-////GEnres:         ENUM
-////1 Shoes/Heels  
-////2 Pants 
-////3 Shirts/Blouses 
-////4 Hats
-
-////items:          ENUM
-////1. blah: price
-////2. blah: price
-////3. blah: price
-////4. blah: price
-////5. blah: price
-////6. blah: price discount
-
-
-
-
-
-
-
-//using System;
-//using System.Collections.Generic;
-//using System.Linq;
-//using System.Text;
-//using System.Threading.Tasks;
-
-//namespace DepartmentStoreProject
-//{
-
-//    enum shoes
-//    {
-//        Sneakers,
-//        Slippers,
-//        Boots,
-//        Sandals,
-
-//    }
-//    enum pants
-//    {
-//        Jeans,
-//        DressPants,
-//        Khakis,
-//        Shorts,
-
-
-//    }
-//    enum shirts
-//    {
-//        LongSleeves,
-//        ShortSleeves,
-//        TShirts,
-//        ButtonUps,
-
-
-
-//    }
-//    enum hats
-//    {
-//        BaseballCaps,
-//        Fedoras,
-//        Boaters,
-//        Beanies
-
-
-//    }
-
-
-//    class Program
-//    {
-       
-//        //enum
-
-
-//        static void Main(string[] args)
-//        {
-
-//            int footWear;
-//            Console.WriteLine("Hello and what type of shoes are you looking for?\n 1.Sneakers.\n2.Slippers.\n3Boots.\nSandals.\n");
-//            string subject = Console.ReadLine();
-//            int.TryParse(subject, out footWear);
-
-//            switch ((shoes)footWear)
-//            {
-//                case shoes.Sneakers:
-
-
-
-//                break;
-
-
-//                case shoes.Slippers:
-
-
-
-//                break;
-
-//                case shoes.Boots:
-
-
-
-//                break;
-
-//                case shoes.Sandals:
-
-
-
-//                break;
-//            }
-
-//            int pantaloons;
-//            Console.WriteLine("Hello and welcome to the pantaloons department what can I help you with?\n 1.Jeans.\n2.Dresspants.\n3Khakis.\nShorts.\n");
-//            string slacks = Console.ReadLine();
-//            int.TryParse(slacks, out pantaloons);
-
-//            switch ((pants)pantaloons)
-//            {
-//                case pants.Jeans:
-
-
-
-
-
-
-//                break;
-
-//                case pants.DressPants:
-
-
-
-//                break;
-
-//                case pants.Khakis:
-
-
-
-
-//                break;
-
-//                case pants.Shorts:
-
-
-
-
-//                break;
-//            }
-
-//            int tops;
-//            Console.WriteLine("Hello and what type of shoes are you looking for?\n 1.LongSleeves.\n2.ShortSleeves.\n3.Tshirts.\nButtonUps.\n");
-//            string upperbod = Console.ReadLine();
-//            int.TryParse(upperbod, out tops);
-
-//            switch ((shirts)tops)
-//            {
-//                case shirts.LongSleeves:
-
-
-
-//                break;
-
-//                case shirts.ShortSleeves:
-
-
-
-//                break;
-
-//                case shirts.TShirts:
-
-
-
-//                break;
-
-//                case shirts.ButtonUps:
-
-
-//                break;
-
-                    
-//            }
-
-//            int headWear;
-//            Console.WriteLine("Hello and what type of shoes are you looking for?\n 1.BaseBallCaps.\n2.Fedoras.\n3.Floaters.\nBeanies.\n");
-//            string topwear = Console.ReadLine();
-//            int.TryParse(topwear, out headWear);
-
-//            switch ((hats)headWear)
-//            {
-//                case hats.BaseballCaps:
-
-
-
-
-
-//                break;
-
-//                case hats.Fedoras:
-
-
-
-//                break;
-//                case hats.Boaters:
-
-
-//                break;
-
-
-//                case hats.Beanies:
-
-
-
-//                break;
-
-            }
+//GEnres:         ENUM
+//1 Shoes/Heels  
+//2 Pants 
+//3 Shirts/Blouses 
+//4 Hats
+
+//items:          ENUM
+//1. blah: price
+//2. blah: price
+//3. blah: price
+//4. blah: price
+//5. blah: price
+//6. blah: price
+
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+
+namespace DepartmentStoreProject
+{
+    enum Genres
+    {
+        Shoes = 1,
+        Pants,
+        Shirts,
+        Hats
+
+    }
+    class Program
+    {        
+        static void Main(string[] args)
+        {
+            Pants qwe = new Pants();
+            qwe.Somepants();
+            Console.ReadLine();
+            
+            string inputChoice;
+            int inputNumb;
+            
+            
+            string exit = "exit";
+            Console.WriteLine("Welcome to our store!");
+            do
+            {
+                
+                Console.WriteLine("Select the department to shop:\n1 - Shoes:\n2 - Pants:\n3 - Shirts:\n4 - Hats:");
+                inputChoice = Console.ReadLine();
+                int.TryParse(inputChoice, out inputNumb);
+                while (!int.TryParse(inputChoice, out inputNumb))
+                {
+
+                    Console.WriteLine("INCORRECT INPUT! SELECT A NUMBER OF A DEPARTMENT:\n1 - Shoes:\n2 - Pants:\n3 - Shirts:\n4 - Hats:");
+                }
+                switch ((Genres)inputNumb)
+                {
+                    case Genres.Shoes:
+                        //call method1
+                        Console.WriteLine("123");
+                        break;
+                    case Genres.Pants:
+                        Console.WriteLine("123");
+                        break;
+                    case Genres.Shirts:
+                        Console.WriteLine("123");
+                        break;
+                    case Genres.Hats:
+                        Console.WriteLine("123");
+                        break;
+                }
+
+            } while (!(exit == "exit"));
+            Console.WriteLine("Your total is");
+            
+            //method1
+            //ask what item they want. Get input. Case choice. Add mathing price to subtotal. 
+
+        
+            
         }
     }
 }

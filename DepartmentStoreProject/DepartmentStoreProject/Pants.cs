@@ -6,18 +6,18 @@ using System.Threading.Tasks;
 
 namespace DepartmentStoreProject
 {
-    class Pants: BaseClass
+    class Pants : BaseClass
     {
         public void Somepants()
         {
 
-            Pants Jeans = new Pants();
+            Pants jeans = new Pants();
 
-            Jeans.Name= "Jeans";
-            Jeans.ID = 101;
-            Jeans.Color = "Blue";
-            Jeans.Size = 42.30;
-            Jeans.Price = 24.99;
+            jeans.Name= "Jeans";
+            jeans.ID = 101;
+            jeans.Color = "Blue";
+            jeans.Size = 42.30;
+            jeans.Price = 24.99;
 
             Pants DressPants = new Pants();
 
@@ -33,39 +33,40 @@ namespace DepartmentStoreProject
             Khakis.ID = 103;
             Khakis.Color = "Beige";
             Khakis.Size = 36.33;
-            Khakis.Price = 29.99;
+            Khakis.Price = 21.99;
 
             Pants Shorts = new Pants();
 
             Shorts.Name = "Shorts";
-            Shorts.ID = 103;
+            Shorts.ID = 104;
             Shorts.Color = "Beige";
             Shorts.Size = 36.33;
-            Shorts.Price = 19.99;
+            Shorts.Price = 21.99;
 
             Pants CargoPants = new Pants();
 
             CargoPants.Name = "Cargo Pants";
-            CargoPants.ID = 103;
+            CargoPants.ID = 105;
             CargoPants.Color = "Camoflauge";
             CargoPants.Size = 36.33;
             CargoPants.Price = 21.99;
 
+            Dictionary<int, Pants> Panties = new Dictionary<int, Pants>();
+            Panties.Add(jeans.ID, jeans);
+            Panties.Add(DressPants.ID, jeans);
+            Panties.Add(Khakis.ID, jeans);
+            Panties.Add(Shorts.ID, jeans);
+            Panties.Add(CargoPants.ID, jeans);
+            
 
+            Console.WriteLine("Here is stuff we have:");
+            foreach (KeyValuePair<int, Pants> item in Panties)
+            {
+                Pants asd = item.Value;
+                asd.Asd();
+                
+            }
 
-
-
-
-
-
-
-            Dictionary<int, Pants> Wj = new Dictionary<int, Pants>;
-            Wj.Add(Jeans.ID, Jeans);
-
-            Dictionary<int, \
-
-
-
-        }
+        }       
     }    
 }
