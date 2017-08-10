@@ -29,7 +29,7 @@ namespace DepartmentStoreProject
             BaseballCaps.Color = "Red";
             BaseballCaps.Size = 9;
             BaseballCaps.Price = 9.00;
-            
+
 
             Hats Fedoras = new Hats();
 
@@ -37,7 +37,7 @@ namespace DepartmentStoreProject
             Fedoras.ID = 002;
             Fedoras.Color = "Black/Red";
             Fedoras.Size = 10;
-            Fedoras.Price = 27.99 ;
+            Fedoras.Price = 27.99;
 
             Hats Boaters = new Hats();
 
@@ -146,6 +146,7 @@ namespace DepartmentStoreProject
 
                 Console.WriteLine($"Press ENTER to continue or type EXIT to go to Department selection");
                 input = Console.ReadLine().ToLower();
-            }
+            } while (input != "exit");
+        }   
     }
 }
