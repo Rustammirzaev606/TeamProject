@@ -93,7 +93,7 @@ namespace DepartmentStoreProject
             do
             {
                 Console.Clear();
-                Console.WriteLine("Here is stuff we have:");
+                Console.WriteLine("Welcome to the shoe department! Here's our catalog!");
                 foreach (KeyValuePair<int, ShoesAndHeels> item in Footwear)
                 {
                     ShoesAndHeels ListOfFootwear = item.Value;
@@ -105,7 +105,7 @@ namespace DepartmentStoreProject
                 int.TryParse(input, out inputNumb);
                 while (!int.TryParse(input, out inputNumb))
                 {
-                    Console.WriteLine("Wrong input. Select a number");
+                    Console.WriteLine("Im sorry I do not understand. Please select a number.");
                     foreach (KeyValuePair<int, ShoesAndHeels> item in Footwear)
                     {
                         ShoesAndHeels ListOfFootwear = item.Value;

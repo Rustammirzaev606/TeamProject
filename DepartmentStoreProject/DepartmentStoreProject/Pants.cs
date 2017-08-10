@@ -82,7 +82,7 @@ namespace DepartmentStoreProject
             do
             {
                 Console.Clear();
-                Console.WriteLine("Here is stuff we have:");
+                Console.WriteLine("Hello, welcome to our pants department.Here are our items for sale.");
                 foreach (KeyValuePair<int, Pants> item in Pantalones)
                 {
                     Pants ListOfShirts = item.Value;
@@ -94,7 +94,7 @@ namespace DepartmentStoreProject
                 int.TryParse(input, out inputNumb);
                 while (!int.TryParse(input, out inputNumb))
                 {
-                    Console.WriteLine("Wrong input. Select a number");
+                    Console.WriteLine("Im sorry I do not understand. Please select a number.");
                     foreach (KeyValuePair<int, Pants> item in Pantalones)
                     {
                         Pants ListOfShirts = item.Value;
@@ -111,32 +111,32 @@ namespace DepartmentStoreProject
                     case PantsEnum.Jeans:
                         Subtotal += jeans.Price;
                         addSubtotal = jeans.Price;
-                        Console.WriteLine($"We added {jeans.Name} to your cart.");
+                        Console.WriteLine($"We have added {jeans.Name} to your cart.");
                         break;
                     case PantsEnum.DressPants:
                         Subtotal += DressPants.Price;
                         addSubtotal = DressPants.Price;
-                        Console.WriteLine($"We added {DressPants.Name} to your cart");
+                        Console.WriteLine($"We have added {DressPants.Name} to your cart.");
                         break;
                     case PantsEnum.Khakis:
                         Subtotal += Khakis.Price;
                         addSubtotal = Khakis.Price;
-                        Console.WriteLine($"We added {Khakis.Name} to your cart");
+                        Console.WriteLine($"We have added {Khakis.Name} to your cart.");
                         break;
                     case PantsEnum.Shorts:
                         Subtotal += Shorts.Price;
                         addSubtotal = Shorts.Price;
-                        Console.WriteLine($"We added {Shorts.Name} to your cart");
+                        Console.WriteLine($"We have added {Shorts.Name} to your cart.");
                         break;
                     case PantsEnum.Cargopants:
                         Subtotal += CargoPants.Price;
                         addSubtotal = CargoPants.Price;
-                        Console.WriteLine($"We added {CargoPants.Name} to your cart");
+                        Console.WriteLine($"We have added {CargoPants.Name} to your cart.");
                         break;
                     case PantsEnum.Sweatpants:
                         Subtotal += SweatPants.Price;
                         addSubtotal = SweatPants.Price;
-                        Console.WriteLine($"We added {SweatPants.Name} to your cart");
+                        Console.WriteLine($"We have added {SweatPants.Name} to your cart.");
                         break;
                     default:
                         Console.WriteLine("Im sorry I do not recognize your answer.");
