@@ -11,13 +11,13 @@ namespace DepartmentStoreProject
         public void Somepants()
         {
 
-            Pants jeans = new Pants();
+            Pants Jeans = new Pants();
 
-            jeans.Name= "Jeans";
-            jeans.ID = 101;
-            jeans.Color = "Blue";
-            jeans.Size = 42.30;
-            jeans.Price = 24.99;
+            Jeans.Name= "Jeans";
+            Jeans.ID = 101;
+            Jeans.Color = "Blue";
+            Jeans.Size = 42.30;
+            Jeans.Price = 24.99;
 
             Pants DressPants = new Pants();
 
@@ -33,7 +33,7 @@ namespace DepartmentStoreProject
             Khakis.ID = 103;
             Khakis.Color = "Beige";
             Khakis.Size = 36.33;
-            Khakis.Price = 21.99;
+            Khakis.Price = 29.99;
 
             Pants Shorts = new Pants();
 
@@ -41,7 +41,7 @@ namespace DepartmentStoreProject
             Shorts.ID = 103;
             Shorts.Color = "Beige";
             Shorts.Size = 36.33;
-            Shorts.Price = 21.99;
+            Shorts.Price = 19.99;
 
             Pants CargoPants = new Pants();
 
@@ -59,10 +59,13 @@ namespace DepartmentStoreProject
 
 
 
-            Dictionary<int, Pants> Panties = new Dictionary<int, Pants>;
-            Panties.Add(jeans.ID, jeans);
+            Dictionary<int, Pants> Wj = new Dictionary<int, Pants>;
+            Wj.Add(Jeans.ID, Jeans);
 
-            
+            Dictionary<int, \
+
+
+
         }
     }    
 }
