@@ -78,7 +78,7 @@ namespace DepartmentStoreProject
             } while (!(exit == "exit"));
             total = shierties.Subtotal + ShoesAndHeels.Subtotal + panties.Subtotal;
             
-            Console.WriteLine($"Your grand total comes to {total}");
+            Console.WriteLine($"Your grand total comes to {total}.");
             Console.ReadLine();
             
             //method1

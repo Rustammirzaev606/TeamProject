@@ -93,7 +93,7 @@ namespace DepartmentStoreProject
             do
             {
                 Console.Clear();
-                Console.WriteLine("Welcome to the shoe department! Here's our catalog!");
+                Console.WriteLine("Welcome to the shoe department! Here's whats in our catalog!");
                 foreach (KeyValuePair<int, ShoesAndHeels> item in Footwear)
                 {
                     ShoesAndHeels ListOfFootwear = item.Value;

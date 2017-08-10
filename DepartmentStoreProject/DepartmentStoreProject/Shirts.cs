@@ -81,7 +81,7 @@ namespace DepartmentStoreProject
             do
             {
                 Console.Clear();
-                Console.WriteLine("Hello welcome to our shirts department.Here is whats in our catalog.");
+                Console.WriteLine("Welcome to the shirts department! Here's whats in our catalog!");
                 foreach (KeyValuePair<int, Shirts> item in dicShirt)
                 {
                     Shirts ListOfShirts = item.Value;
