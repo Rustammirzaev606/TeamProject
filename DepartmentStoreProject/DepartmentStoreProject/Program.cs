@@ -34,6 +34,9 @@ namespace DepartmentStoreProject
     {        
         static void Main(string[] args)
         {
+            Pants qwe = new Pants();
+            qwe.Somepants();
+            Console.ReadLine();
             
             string inputChoice;
             int inputNumb;
@@ -71,6 +74,7 @@ namespace DepartmentStoreProject
 
             } while (!(exit == "exit"));
             Console.WriteLine("Your total is");
+            
             //method1
             //ask what item they want. Get input. Case choice. Add mathing price to subtotal. 
 

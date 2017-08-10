@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace DepartmentStoreProject
 {
-    class Pants: BaseClass
+    class Pants : BaseClass
     {
         public void Somepants()
         {
@@ -38,7 +38,7 @@ namespace DepartmentStoreProject
             Pants Shorts = new Pants();
 
             Shorts.Name = "Shorts";
-            Shorts.ID = 103;
+            Shorts.ID = 104;
             Shorts.Color = "Beige";
             Shorts.Size = 36.33;
             Shorts.Price = 21.99;
@@ -46,23 +46,27 @@ namespace DepartmentStoreProject
             Pants CargoPants = new Pants();
 
             CargoPants.Name = "Cargo Pants";
-            CargoPants.ID = 103;
+            CargoPants.ID = 105;
             CargoPants.Color = "Camoflauge";
             CargoPants.Size = 36.33;
             CargoPants.Price = 21.99;
 
-
-
-
-
-
-
-
-
             Dictionary<int, Pants> Panties = new Dictionary<int, Pants>();
             Panties.Add(jeans.ID, jeans);
-
+            Panties.Add(DressPants.ID, jeans);
+            Panties.Add(Khakis.ID, jeans);
+            Panties.Add(Shorts.ID, jeans);
+            Panties.Add(CargoPants.ID, jeans);
             
-        }
+
+            Console.WriteLine("Here is stuff we have:");
+            foreach (KeyValuePair<int, Pants> item in Panties)
+            {
+                Pants asd = item.Value;
+                asd.Asd();
+                
+            }
+
+        }       
     }    
 }
