@@ -8,10 +8,10 @@ namespace DepartmentStoreProject
 {
     class BaseClass
     {
-        //Base class for inheritance
-        //6 properties Item(Number 1 to 6) like Item1 Item2
-        //6 properties 
-       
-
+        public string Name { get; set; }
+        public int ID { get; set; }
+        public string Color { get; set; }
+        public double Size { get; set; }
+        public double Price { get; set; }  
     }
-}
+}    

@@ -1,0 +1,13 @@
+﻿Opening repositories:
+D:\CC4 Projects\SithTraining\SithTraining
+Opening repositories:
+D:\CC4 Projects\TeamProject
+Error encountered while pushing to the remote repository: Response status code does not indicate success: 403 (Forbidden).
+File not staged because it is modified in memory but not saved to disk: D:\CC4 Projects\TeamProject\DepartmentStoreProject\DepartmentStoreProject\DepartmentStoreProject.csproj
+Commit 2a8b02ee created locally in repository D:\CC4 Projects\TeamProject
+Error encountered while pushing to the remote repository: Response status code does not indicate success: 403 (Forbidden).
+Error encountered while pushing to the remote repository: Response status code does not indicate success: 403 (Forbidden).
+File not staged because it is modified in memory but not saved to disk: D:\CC4 Projects\TeamProject\DepartmentStoreProject\DepartmentStoreProject\Program.cs
+Commit 5f7165ff created locally in repository D:\CC4 Projects\TeamProject
+Error encountered while pushing to the remote repository: Response status code does not indicate success: 403 (Forbidden).
+Error encountered while pushing to the remote repository: Response status code does not indicate success: 403 (Forbidden).
