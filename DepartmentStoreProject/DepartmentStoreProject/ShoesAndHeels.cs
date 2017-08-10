@@ -60,6 +60,21 @@ namespace DepartmentStoreProject
             TapShoes.Color = "Black/White";
             TapShoes.Size = 11.5;
             TapShoes.Price = 69.99;
+
+            Dictionary<int, ShoesAndHeels> Footwear = new Dictionary<int, ShoesAndHeels>();
+            Footwear.Add(Slippers.ID, Slippers);
+            Footwear.Add(Sneakers.ID, Sneakers);
+            Footwear.Add(Boots.ID, Boots);
+            Footwear.Add(Sandals.ID, Sandals);
+            Footwear.Add(DressShoes.ID, DressShoes);
+            Footwear.Add(TapShoes.ID, TapShoes);
+
+
+
+
+
+
+
         }
 
 

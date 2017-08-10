@@ -39,9 +39,9 @@ namespace DepartmentStoreProject
 
             Shorts.Name = "Shorts";
             Shorts.ID = 104;
-            Shorts.Color = "Beige";
-            Shorts.Size = 36.33;
-            Shorts.Price = 21.99;
+            Shorts.Color = "Brown";
+            Shorts.Size = 35;
+            Shorts.Price = 19.99;
 
             Pants CargoPants = new Pants();
 
@@ -51,13 +51,21 @@ namespace DepartmentStoreProject
             CargoPants.Size = 36.33;
             CargoPants.Price = 21.99;
 
+            Pants SweatPants = new Pants();
+
+            CargoPants.Name = "Sweat Pants";
+            CargoPants.ID = 106;
+            CargoPants.Color = "Dark Grey";
+            CargoPants.Size = 37.35;
+            CargoPants.Price = 17.49;
+
             Dictionary<int, Pants> Panties = new Dictionary<int, Pants>();
             Panties.Add(jeans.ID, jeans);
-            Panties.Add(DressPants.ID, jeans);
-            Panties.Add(Khakis.ID, jeans);
-            Panties.Add(Shorts.ID, jeans);
-            Panties.Add(CargoPants.ID, jeans);
-            
+            Panties.Add(DressPants.ID, DressPants);
+            Panties.Add(Khakis.ID, Khakis);
+            Panties.Add(Shorts.ID, Shorts);
+            Panties.Add(CargoPants.ID, CargoPants);
+            Panties.Add(SweatPants.ID, SweatPants);
 
             Console.WriteLine("Here is stuff we have:");
             foreach (KeyValuePair<int, Pants> item in Panties)

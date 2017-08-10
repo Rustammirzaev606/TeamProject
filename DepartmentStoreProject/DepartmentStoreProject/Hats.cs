@@ -51,13 +51,31 @@ namespace DepartmentStoreProject
             Homburg.Size = 11.5;
             Homburg.Price = 43.95;
 
-            Hats TopHat = new Hats();
+            Hats TopHats = new Hats();
 
-            TopHat.Name = "Top Hat";
-            TopHat.ID = 006;
-            TopHat.Color = "Black";
-            TopHat.Size = 10.5;
-            TopHat.Price = 89.95;
+            TopHats.Name = "Top Hat";
+            TopHats.ID = 006;
+            TopHats.Color = "Black";
+            TopHats.Size = 10.5;
+            TopHats.Price = 89.95;
+
+            Dictionary<int, Hats> HeadGear = new Dictionary<int, Hats>();
+            HeadGear.Add(BaseballCaps.ID, BaseballCaps);
+            HeadGear.Add(Fedoras.ID, Fedoras);
+            HeadGear.Add(Boaters.ID, Boaters);
+            HeadGear.Add(Beanies.ID, Beanies);
+            HeadGear.Add(Homburg.ID, Homburg);
+            HeadGear.Add(TopHats.ID, TopHats);
+
+
+            Console.WriteLine("Here is our hat line:");
+            foreach (KeyValuePair<int, Pants> item in Panties)
+            {
+                Pants asd = item.Value;
+                asd.Asd();
+
+            }
+
         }
     }
 }
