@@ -45,17 +45,17 @@ namespace DepartmentStoreProject
             
             
             string exit = "exit";
-            Console.WriteLine("Welcome to our store!");
+            Console.WriteLine("Hello! Welcome to Rustam & Dorrell's Clothing Emporium!");
             do
             {
                 
-                Console.WriteLine("Select the department to shop:\n1 - Shoes:\n2 - Pants:\n3 - Shirts:\n4 - Hats:", 70);
+                Console.WriteLine("How may we help you today?:\n1 - Shoes:\n2 - Pants:\n3 - Shirts:\n4 - Hats:", 70);
                 inputChoice = Console.ReadLine();
                 int.TryParse(inputChoice, out inputNumb);
                 while (!int.TryParse(inputChoice, out inputNumb))
                 {
 
-                    Console.WriteLine("INCORRECT INPUT! SELECT A NUMBER OF A DEPARTMENT:\n1 - Shoes:\n2 - Pants:\n3 - Shirts:\n4 - Hats:");
+                    Console.WriteLine("I am sorry for the inconvenience, But I do not recognize your answer. Please select an appropriate department.:\n1 - Shoes:\n2 - Pants:\n3 - Shirts:\n4 - Hats:");
                 }
                 switch ((Genres)inputNumb)
                 {
@@ -78,7 +78,7 @@ namespace DepartmentStoreProject
             } while (!(exit == "exit"));
             total = shierties.Subtotal + ShoesAndHeels.Subtotal + panties.Subtotal;
             
-            Console.WriteLine($"Your total is {total}");
+            Console.WriteLine($"Your grand total comes to {total}");
             Console.ReadLine();
             
             //method1

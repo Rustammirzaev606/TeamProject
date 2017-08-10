@@ -65,11 +65,11 @@ namespace DepartmentStoreProject
 
             Pants SweatPants = new Pants();
 
-            CargoPants.Name = "Sweat Pants";
-            CargoPants.ID = 6;
-            CargoPants.Color = "Dark Grey";
-            CargoPants.Size = 37.35;
-            CargoPants.Price = 17.49;
+            SweatPants.Name = "Sweat Pants";
+            SweatPants.ID = 6;
+            SweatPants.Color = "Dark Grey";
+            SweatPants.Size = 37.35;
+            SweatPants.Price = 17.49;
 
             Dictionary<int, Pants> Pantalones = new Dictionary<int, Pants>();
             Pantalones.Add(jeans.ID, jeans);
@@ -89,7 +89,7 @@ namespace DepartmentStoreProject
                     ListOfShirts.PrintMethod();
 
                 }
-                Console.WriteLine("Select an item");
+                Console.WriteLine("Please select an item.");
                 input = Console.ReadLine();
                 int.TryParse(input, out inputNumb);
                 while (!int.TryParse(input, out inputNumb))
@@ -111,7 +111,7 @@ namespace DepartmentStoreProject
                     case PantsEnum.Jeans:
                         Subtotal += jeans.Price;
                         addSubtotal = jeans.Price;
-                        Console.WriteLine($"We added {jeans.Name} to your cart");
+                        Console.WriteLine($"We added {jeans.Name} to your cart.");
                         break;
                     case PantsEnum.DressPants:
                         Subtotal += DressPants.Price;
@@ -139,11 +139,11 @@ namespace DepartmentStoreProject
                         Console.WriteLine($"We added {SweatPants.Name} to your cart");
                         break;
                     default:
-                        Console.WriteLine("WRONG INPUT!");
+                        Console.WriteLine("Im sorry I do not recognize your answer.");
                         break;
                 }
 
-                Console.WriteLine($"Press ENTER to continue or type EXIT to go to Department selection");
+                Console.WriteLine($"Press ENTER to continue or type EXIT to go back to the main store.");
                 input = Console.ReadLine().ToLower();
 
             } while (input != "exit");

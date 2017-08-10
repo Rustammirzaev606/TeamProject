@@ -100,7 +100,7 @@ namespace DepartmentStoreProject
                     ListOfFootwear.PrintMethod();
 
                 }
-                Console.WriteLine("Select an item");
+                Console.WriteLine("Please select an item.");
                 input = Console.ReadLine();
                 int.TryParse(input, out inputNumb);
                 while (!int.TryParse(input, out inputNumb))
@@ -122,40 +122,40 @@ namespace DepartmentStoreProject
                     case ShoesEnum.Sneakers:
                         Subtotal += Sneakers.Price;
                         addSubtotal = Sneakers.Price;
-                        Console.WriteLine($"We added {Sneakers.Name} to your cart");
+                        Console.WriteLine($"We have added {Sneakers.Name} to your cart.");
                         break;
                     case ShoesEnum.Boots:
                         Subtotal += Boots.Price;
                         addSubtotal = Boots.Price;
-                        Console.WriteLine($"We added {Boots.Name} to your cart");
+                        Console.WriteLine($"We added {Boots.Name} to your cart.");
                         break;
                     case ShoesEnum.Sandals:
                         Subtotal += Sandals.Price;
                         addSubtotal = Sandals.Price;
-                        Console.WriteLine($"We added {Sandals.Name} to your cart");
+                        Console.WriteLine($"We have added {Sandals.Name} to your cart.");
                         break;
                     case ShoesEnum.DressShoes:
                         Subtotal += DressShoes.Price;
                         addSubtotal = DressShoes.Price;
-                        Console.WriteLine($"We added {DressShoes.Name} to your cart");
+                        Console.WriteLine($"We have added {DressShoes.Name} to your cart.");
                         break;
                     case ShoesEnum.TapShoes:
                         Subtotal += TapShoes.Price;
                         addSubtotal = TapShoes.Price;
-                        Console.WriteLine($"We added {TapShoes.Name} to your cart");
+                        Console.WriteLine($"We have added {TapShoes.Name} to your cart.");
                         break;
                     case ShoesEnum.Slippers:
                         Subtotal += Slippers.Price;
                         addSubtotal = Slippers.Price;
-                        Console.WriteLine($"We added {Slippers.Name} to your cart");
+                        Console.WriteLine($"We have added {Slippers.Name} to your cart.");
                         break;
                     default:
-                        Console.WriteLine("WRONG INPUT!");
+                        Console.WriteLine("Im sorry I do not recognize your answer.");
                         break;
 
                 }
 
-                Console.WriteLine($"Press ENTER to continue or type EXIT to go to Department selection");
+                Console.WriteLine($"Press ENTER to continue or type EXIT to go back to the main store.");
                 input = Console.ReadLine().ToLower();
 
             } while (input != "exit");

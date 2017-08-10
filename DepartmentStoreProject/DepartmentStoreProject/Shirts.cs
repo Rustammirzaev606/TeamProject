@@ -88,7 +88,7 @@ namespace DepartmentStoreProject
                     ListOfShirts.PrintMethod();
 
                 }
-                Console.WriteLine("Select an item");
+                Console.WriteLine("Please select an item.");
                 input = Console.ReadLine();
                 int.TryParse(input, out inputNumb);
                 while (!int.TryParse(input, out inputNumb))
@@ -110,39 +110,39 @@ namespace DepartmentStoreProject
                     case Shiert.ButtonUps:
                         Subtotal += ButtonUps.Price;
                         addSubtotal = ButtonUps.Price;
-                        Console.WriteLine($"We added {ButtonUps.Name} to your cart");
+                        Console.WriteLine($"We have added {ButtonUps.Name} to your cart.");
                         break;
                     case Shiert.Hoodies:
                         Subtotal += Hoodies.Price;
                         addSubtotal = Hoodies.Price;
-                        Console.WriteLine($"We added {Hoodies.Name} to your cart");
+                        Console.WriteLine($"We have added {Hoodies.Name} to your cart.");
                         break;
                     case Shiert.LongSleeves:
                         Subtotal += LongSleeves.Price;
                         addSubtotal = LongSleeves.Price;
-                        Console.WriteLine($"We added {LongSleeves.Name} to your cart");
+                        Console.WriteLine($"We have added {LongSleeves.Name} to your cart.");
                         break;
                     case Shiert.ShortSleeves:
                         Subtotal += ShortSleeves.Price;
                         addSubtotal = ShortSleeves.Price;
-                        Console.WriteLine($"We added {ShortSleeves.Name} to your cart");
+                        Console.WriteLine($"We have added {ShortSleeves.Name} to your cart.");
                         break;
                     case Shiert.Sweaters:
                         Subtotal += Sweaters.Price;
                         addSubtotal = Sweaters.Price;
-                        Console.WriteLine($"We added {Sweaters.Name} to your cart");
+                        Console.WriteLine($"We have added {Sweaters.Name} to your cart.");
                         break;
                     case Shiert.TShirts:
                         Subtotal += TShirts.Price;
                         addSubtotal = TShirts.Price;
-                        Console.WriteLine($"We added {TShirts.Name} to your cart");
+                        Console.WriteLine($"We have added {TShirts.Name} to your cart.");
                         break;
                     default:
-                        Console.WriteLine("WRONG INPUT!");
+                        Console.WriteLine("Im sorry I do not recognize your response.");
                         break;
                 }
                 
-                Console.WriteLine($"Press ENTER to continue or type EXIT to go to Department selection");
+                Console.WriteLine($"Press ENTER to continue or type EXIT to go back to the main store.");
                 input = Console.ReadLine().ToLower();
 
             } while (input != "exit");
