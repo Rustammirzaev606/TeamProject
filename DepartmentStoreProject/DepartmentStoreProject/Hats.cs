@@ -106,7 +106,7 @@ namespace DepartmentStoreProject
                 int.TryParse(input, out inputNumb);
                 while (!int.TryParse(input, out inputNumb))
                 {
-                    Console.WriteLine("Im sorry I do not understand.Please select a number.");
+                    Console.WriteLine("Im sorry I do not understand. Please select a number.");
                     foreach (KeyValuePair<int, Hats> item in HeadGear)
                     {
                         Hats ListOfHats = item.Value;

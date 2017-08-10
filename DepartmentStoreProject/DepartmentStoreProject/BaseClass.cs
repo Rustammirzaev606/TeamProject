@@ -31,7 +31,7 @@ namespace DepartmentStoreProject
             Savings += Price * DiscountRate;
             NewPrice = Price - Price * DiscountRate;
             Console.Write(String.Format($"{ID}  {Name.PadRight(20, '.')}"));
-            Console.WriteLine($"{Color.PadRight(5, '.')}, {Size,5}, {Price.ToString("C")}  **ATTENTION!!!** **SALES ITEM!!!** New Price {NewPrice.ToString("C")}");
+            Console.WriteLine($"{Color.PadRight(5, '.')}, {Size,5}, {Price.ToString("C")}  **ATTENTION!!!** **SALES ITEM!!!** **{DiscountRate.ToString("P")} OFF!!!** **New Price!** {NewPrice.ToString("C")}!!!");
         }
     }
 }    

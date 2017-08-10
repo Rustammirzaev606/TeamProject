@@ -83,7 +83,7 @@ namespace DepartmentStoreProject
             } while (exit == "checkout" ^ exit != "check out");
             
             Console.WriteLine($"Your grand total comes to {total.ToString("C")}.You saved {savings.ToString("C")}!"); //needs changes. Math aint working yet.
-            Console.WriteLine("Thankyou for shopping with us here at the Rustam and Dorrell Clothing Emporium. We look forward to seeing you again");
+            Console.WriteLine("Thank you for shopping with us here at the Rustam and Dorrell Clothing Emporium! We look forward to seeing you again. Have a fantastic day!!");
             Console.ReadLine();
             
             //method1
