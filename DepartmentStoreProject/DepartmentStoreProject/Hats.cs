@@ -21,7 +21,7 @@ namespace DepartmentStoreProject
         {
             int inputNumb;
             string input;
-            double addSubtotal = 0;
+            
             Hats BaseballCaps = new Hats();
 
             BaseballCaps.Name = "Baseball Caps";
@@ -70,6 +70,8 @@ namespace DepartmentStoreProject
             TopHats.Color = "Black";
             TopHats.Size = 10.5;
             TopHats.Price = 89.95;
+            TopHats.Discount = true;
+            TopHats.DiscountRate = 0.15;
 
             Dictionary<int, Hats> HeadGear = new Dictionary<int, Hats>();
             HeadGear.Add(BaseballCaps.ID, BaseballCaps);
@@ -86,8 +88,17 @@ namespace DepartmentStoreProject
                 Console.WriteLine("Welcome to the hat department! Here's whats in our catalog!");
                 foreach (KeyValuePair<int, Hats> item in HeadGear)
                 {
+                    
                     Hats ListOfHats = item.Value;
-                    ListOfHats.PrintMethod();
+                    if (ListOfHats.Discount == true)
+                    {
+                        ListOfHats.PrintDiscount();
+                    }
+                    else
+                    {
+                        ListOfHats.PrintMethod();
+                    }
+                   
 
                 }
                 Console.WriteLine("Please select an item.");
@@ -99,7 +110,14 @@ namespace DepartmentStoreProject
                     foreach (KeyValuePair<int, Hats> item in HeadGear)
                     {
                         Hats ListOfHats = item.Value;
-                        ListOfHats.PrintMethod();
+                        if (ListOfHats.Discount == true)
+                        {
+                            ListOfHats.PrintDiscount();
+                        }
+                        else
+                        {
+                            ListOfHats.PrintMethod();
+                        }
 
 
                     }
@@ -111,32 +129,32 @@ namespace DepartmentStoreProject
                 {
                     case HatsEnum.BaseballCaps:
                         Subtotal += BaseballCaps.Price;
-                        addSubtotal = BaseballCaps.Price;
+                        
                         Console.WriteLine($"We have added {BaseballCaps.Name} to your cart.");
                         break;
                     case HatsEnum.Fedoras:
                         Subtotal += BaseballCaps.Price;
-                        addSubtotal = BaseballCaps.Price;
+                        
                         Console.WriteLine($"We have added {BaseballCaps.Name} to your cart.");
                         break;
                     case HatsEnum.Boaters:
                         Subtotal += Boaters.Price;
-                        addSubtotal = Boaters.Price;
+                        
                         Console.WriteLine($"We have added {Boaters.Name} to your cart.");
                         break;
                     case HatsEnum.Beanies:
                         Subtotal += Beanies.Price;
-                        addSubtotal = Beanies.Price;
+                        
                         Console.WriteLine($"We have added {Beanies.Name} to your cart.");
                         break;
                     case HatsEnum.Homburg:
                         Subtotal += Homburg.Price;
-                        addSubtotal = Homburg.Price;
+                        
                         Console.WriteLine($"We have added {Homburg.Name} to your cart.");
                         break;
                     case HatsEnum.TopHats:
-                        Subtotal += TopHats.Price;
-                        addSubtotal = TopHats.Price;
+                        Subtotal += NewPrice;
+                        Savings = TopHats.Price - TopHats.NewPrice;
                         Console.WriteLine($"We have added {TopHats.Name} to your cart.");
                         break;
                     default:

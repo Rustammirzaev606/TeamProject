@@ -23,7 +23,7 @@ namespace DepartmentStoreProject
         {
             int inputNumb;
             string input;
-            double addSubtotal = 0;
+            
 
             ShoesAndHeels Slippers = new ShoesAndHeels();
 
@@ -72,6 +72,8 @@ namespace DepartmentStoreProject
             TapShoes.Color = "Black/White";
             TapShoes.Size = 11.5;
             TapShoes.Price = 69.99;
+            TapShoes.Discount = true;
+            TapShoes.DiscountRate = 0.25;
 
             Dictionary<int, ShoesAndHeels> Footwear = new Dictionary<int, ShoesAndHeels>();
             Footwear.Add(Slippers.ID, Slippers);
@@ -97,7 +99,14 @@ namespace DepartmentStoreProject
                 foreach (KeyValuePair<int, ShoesAndHeels> item in Footwear)
                 {
                     ShoesAndHeels ListOfFootwear = item.Value;
-                    ListOfFootwear.PrintMethod();
+                    if (ListOfFootwear.Discount == true)
+                    {
+                        ListOfFootwear.PrintDiscount();
+                    }
+                    else
+                    {
+                        ListOfFootwear.PrintMethod();
+                    }
 
                 }
                 Console.WriteLine("Please select an item.");
@@ -109,9 +118,14 @@ namespace DepartmentStoreProject
                     foreach (KeyValuePair<int, ShoesAndHeels> item in Footwear)
                     {
                         ShoesAndHeels ListOfFootwear = item.Value;
-                        ListOfFootwear.PrintMethod();
-
-
+                        if (ListOfFootwear.Discount == true)
+                        {
+                            ListOfFootwear.PrintDiscount();
+                        }
+                        else
+                        {
+                            ListOfFootwear.PrintMethod();
+                        }
                     }
                     input = Console.ReadLine();
                     int.TryParse(input, out inputNumb);
@@ -120,33 +134,28 @@ namespace DepartmentStoreProject
                 switch ((ShoesEnum)inputNumb)
                 {
                     case ShoesEnum.Sneakers:
-                        Subtotal += Sneakers.Price;
-                        addSubtotal = Sneakers.Price;
+                        Subtotal += Sneakers.Price;                        
                         Console.WriteLine($"We have added {Sneakers.Name} to your cart.");
                         break;
                     case ShoesEnum.Boots:
-                        Subtotal += Boots.Price;
-                        addSubtotal = Boots.Price;
+                        Subtotal += Boots.Price;                       
                         Console.WriteLine($"We added {Boots.Name} to your cart.");
                         break;
                     case ShoesEnum.Sandals:
-                        Subtotal += Sandals.Price;
-                        addSubtotal = Sandals.Price;
+                        Subtotal += Sandals.Price;                       
                         Console.WriteLine($"We have added {Sandals.Name} to your cart.");
                         break;
                     case ShoesEnum.DressShoes:
-                        Subtotal += DressShoes.Price;
-                        addSubtotal = DressShoes.Price;
+                        Subtotal += DressShoes.Price;                        
                         Console.WriteLine($"We have added {DressShoes.Name} to your cart.");
                         break;
                     case ShoesEnum.TapShoes:
-                        Subtotal += TapShoes.Price;
-                        addSubtotal = TapShoes.Price;
+                        Subtotal += TapShoes.NewPrice;
+                        Savings = TapShoes.Price - TapShoes.NewPrice;
                         Console.WriteLine($"We have added {TapShoes.Name} to your cart.");
                         break;
                     case ShoesEnum.Slippers:
-                        Subtotal += Slippers.Price;
-                        addSubtotal = Slippers.Price;
+                        Subtotal += Slippers.Price;                        
                         Console.WriteLine($"We have added {Slippers.Name} to your cart.");
                         break;
                     default:

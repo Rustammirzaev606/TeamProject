@@ -21,7 +21,7 @@ namespace DepartmentStoreProject
         {
             int inputNumb;
             string input;
-            double addSubtotal = 0;
+            
             Shirts LongSleeves = new Shirts();
 
             LongSleeves.Name = "Long Sleeves";
@@ -124,17 +124,17 @@ namespace DepartmentStoreProject
                 {
                     case Shiert.ButtonUps:
                         Subtotal += ButtonUps.Price;
-                        addSubtotal = ButtonUps.Price;
+                       
                         Console.WriteLine($"We have added {ButtonUps.Name} to your cart.");
                         break;
                     case Shiert.Hoodies:
                         Subtotal += Hoodies.Price;
-                        addSubtotal = Hoodies.Price;
+                        
                         Console.WriteLine($"We have added {Hoodies.Name} to your cart.");
                         break;
                     case Shiert.LongSleeves:
                         Subtotal += LongSleeves.Price;
-                        addSubtotal = LongSleeves.Price;
+                      
                         Console.WriteLine($"We have added {LongSleeves.Name} to your cart.");
                         break;
                     case Shiert.ShortSleeves:
@@ -144,12 +144,12 @@ namespace DepartmentStoreProject
                         break;
                     case Shiert.Sweaters:
                         Subtotal += Sweaters.Price;
-                        addSubtotal = Sweaters.Price;
+                        
                         Console.WriteLine($"We have added {Sweaters.Name} to your cart.");
                         break;
                     case Shiert.TShirts:
                         Subtotal += TShirts.Price;
-                        addSubtotal = TShirts.Price;
+                        
                         Console.WriteLine($"We have added {TShirts.Name} to your cart.");
                         break;
                     default:

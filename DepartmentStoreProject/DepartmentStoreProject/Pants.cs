@@ -21,7 +21,7 @@ namespace DepartmentStoreProject
         {
             int inputNumb;
             string input;
-            double addSubtotal = 0;
+            
 
             Pants jeans = new Pants();
 
@@ -62,6 +62,8 @@ namespace DepartmentStoreProject
             CargoPants.Color = "Camoflauge";
             CargoPants.Size = 36.33;
             CargoPants.Price = 21.99;
+            CargoPants.Discount = true;
+            CargoPants.DiscountRate = 0.1;
 
             Pants SweatPants = new Pants();
 
@@ -86,8 +88,14 @@ namespace DepartmentStoreProject
                 foreach (KeyValuePair<int, Pants> item in Pantalones)
                 {
                     Pants ListOfShirts = item.Value;
-                    ListOfShirts.PrintMethod();
-
+                    if (ListOfShirts.Discount == true)
+                    {
+                        ListOfShirts.PrintDiscount();
+                    }
+                    else
+                    {
+                        ListOfShirts.PrintMethod();
+                    }
                 }
                 Console.WriteLine("Please select an item.");
                 input = Console.ReadLine();
@@ -98,8 +106,14 @@ namespace DepartmentStoreProject
                     foreach (KeyValuePair<int, Pants> item in Pantalones)
                     {
                         Pants ListOfShirts = item.Value;
-                        ListOfShirts.PrintMethod();
-
+                        if (ListOfShirts.Discount == true)
+                        {
+                            ListOfShirts.PrintDiscount();
+                        }
+                        else
+                        {
+                            ListOfShirts.PrintMethod();
+                        }
 
                     }
                     input = Console.ReadLine();
@@ -110,32 +124,32 @@ namespace DepartmentStoreProject
                 {
                     case PantsEnum.Jeans:
                         Subtotal += jeans.Price;
-                        addSubtotal = jeans.Price;
+                        
                         Console.WriteLine($"We have added {jeans.Name} to your cart.");
                         break;
                     case PantsEnum.DressPants:
                         Subtotal += DressPants.Price;
-                        addSubtotal = DressPants.Price;
+                        
                         Console.WriteLine($"We have added {DressPants.Name} to your cart.");
                         break;
                     case PantsEnum.Khakis:
                         Subtotal += Khakis.Price;
-                        addSubtotal = Khakis.Price;
+                       
                         Console.WriteLine($"We have added {Khakis.Name} to your cart.");
                         break;
                     case PantsEnum.Shorts:
                         Subtotal += Shorts.Price;
-                        addSubtotal = Shorts.Price;
+                      
                         Console.WriteLine($"We have added {Shorts.Name} to your cart.");
                         break;
                     case PantsEnum.Cargopants:
-                        Subtotal += CargoPants.Price;
-                        addSubtotal = CargoPants.Price;
+                        Subtotal += CargoPants.NewPrice;
+                        Savings = CargoPants.Price - CargoPants.NewPrice;
                         Console.WriteLine($"We have added {CargoPants.Name} to your cart.");
                         break;
                     case PantsEnum.Sweatpants:
                         Subtotal += SweatPants.Price;
-                        addSubtotal = SweatPants.Price;
+                       
                         Console.WriteLine($"We have added {SweatPants.Name} to your cart.");
                         break;
                     default:
