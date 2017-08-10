@@ -76,13 +76,14 @@ namespace DepartmentStoreProject
                         Console.WriteLine("123");
                         break;
                 }
-                Console.WriteLine("press enter to continue shopping or type CHECK OUT to finish"); //needs changes
+                Console.WriteLine("Press enter if you would like to continue shopping or type CHECK OUT if youre finish"); //needs changes
                 exit = Console.ReadLine().ToLower();
                 total = ShoesAndHeels.Subtotal + panties.Subtotal + shierties.Subtotal + haties.Subtotal;
                 savings = shierties.Savings + panties.Savings + ShoesAndHeels.Savings + haties.Savings;
             } while (exit == "checkout" ^ exit != "check out");
             
-            Console.WriteLine($"Your grand total comes to {total.ToString("C")}. Your savings are {savings.ToString("C")}."); //needs changes. Math aint working yet.
+            Console.WriteLine($"Your grand total comes to {total.ToString("C")}.You saved {savings.ToString("C")}!"); //needs changes. Math aint working yet.
+            Console.WriteLine("Thankyou for shopping with us here at the Rustam and Dorrell Clothing Emporium. We look forward to seeing you again");
             Console.ReadLine();
             
             //method1
