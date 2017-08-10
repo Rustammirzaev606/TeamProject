@@ -59,7 +59,7 @@ namespace DepartmentStoreProject
 
 
 
-            Dictionary<int, Pants> Panties = new Dictionary<int, Pants>;
+            Dictionary<int, Pants> Panties = new Dictionary<int, Pants>();
             Panties.Add(jeans.ID, jeans);
 
             
