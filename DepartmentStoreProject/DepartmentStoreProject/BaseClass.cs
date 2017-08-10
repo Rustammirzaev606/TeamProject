@@ -14,11 +14,14 @@ namespace DepartmentStoreProject
         public double Size { get; set; }
         public double Price { get; set; }
         public double Subtotal { get; set; }
+        public double Discount { get; set; }
+        public double DiscountRate { get; set; }
+        
 
         public void Asd()
         {
 
-            Console.WriteLine($"{ID,45}  {Name, 3}, {Color}, {Size}, {Price.ToString("C")}");
+            Console.WriteLine($"{ID}  {Name, 3}, {Color}, {Size}, {Price.ToString("C")}");
 
         }
     }

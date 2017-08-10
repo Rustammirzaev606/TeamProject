@@ -34,11 +34,13 @@ namespace DepartmentStoreProject
     {        
         static void Main(string[] args)
         {
+            
             Pants panties = new Pants();
             Shirts shierties = new Shirts();
             
             string inputChoice;
             int inputNumb;
+            double total;
             
             
             string exit = "exit";
@@ -46,7 +48,7 @@ namespace DepartmentStoreProject
             do
             {
                 
-                Console.WriteLine("Select the department to shop:\n1 - Shoes:\n2 - Pants:\n3 - Shirts:\n4 - Hats:");
+                Console.WriteLine("Select the department to shop:\n1 - Shoes:\n2 - Pants:\n3 - Shirts:\n4 - Hats:", 70);
                 inputChoice = Console.ReadLine();
                 int.TryParse(inputChoice, out inputNumb);
                 while (!int.TryParse(inputChoice, out inputNumb))
@@ -72,7 +74,10 @@ namespace DepartmentStoreProject
                 }
 
             } while (!(exit == "exit"));
-            Console.WriteLine("Your total is");
+            total = shierties.Subtotal;
+            
+            Console.WriteLine($"Your total is {total}");
+            Console.ReadLine();
             
             //method1
             //ask what item they want. Get input. Case choice. Add mathing price to subtotal. 

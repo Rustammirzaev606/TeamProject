@@ -6,11 +6,22 @@ using System.Threading.Tasks;
 
 namespace DepartmentStoreProject
 {
+    enum Shiert
+    {
+        LongSleeves = 1,
+        ShortSleeves,
+        TShirts,
+        ButtonUps,
+        Sweaters,
+        Hoodies
+    }
     class Shirts:BaseClass
     {
         public void Someshirts()
         {
-            
+            int inputNumb;
+            string input;
+            double addSubtotal = 0;
             Shirts LongSleeves = new Shirts();
 
             LongSleeves.Name = "LongSleeves";
@@ -67,22 +78,71 @@ namespace DepartmentStoreProject
             shiet.Add(ButtonUps.ID, ButtonUps);
             shiet.Add(Sweaters.ID, Sweaters);
             shiet.Add(Hoodies.ID, Hoodies);
-            Console.WriteLine("Here is stuff we have:");
-            foreach (KeyValuePair<int, Shirts> item in shiet)
+            do
             {
-                Shirts asd = item.Value;
-                asd.Asd();
+                Console.Clear();
+                Console.WriteLine("Here is stuff we have:");
+                foreach (KeyValuePair<int, Shirts> item in shiet)
+                {
+                    Shirts asd = item.Value;
+                    asd.Asd();
 
-            }
-            Console.ReadLine();
+                }
+                Console.WriteLine("Select an item");
+                input = Console.ReadLine();
+                int.TryParse(input, out inputNumb);
+                while (!int.TryParse(input, out inputNumb))
+                {
+                    Console.WriteLine("Wrong input. Select a number");
+                    foreach (KeyValuePair<int, Shirts> item in shiet)
+                    {
+                        Shirts asd = item.Value;
+                        asd.Asd();
 
 
+                    }
+                    input = Console.ReadLine();
+                    int.TryParse(input, out inputNumb);
 
+                }
+                switch((Shiert)inputNumb)
+                {
+                    case Shiert.ButtonUps:
+                        Subtotal += ButtonUps.Price;
+                        addSubtotal = ButtonUps.Price;
+                        Console.WriteLine($"We added {ButtonUps.Name} to your cart");
+                        break;
+                    case Shiert.Hoodies:
+                        Subtotal += Hoodies.Price;
+                        addSubtotal = Hoodies.Price;
+                        Console.WriteLine($"We added {Hoodies.Name} to your cart");
+                        break;
+                    case Shiert.LongSleeves:
+                        Subtotal += LongSleeves.Price;
+                        addSubtotal = LongSleeves.Price;
+                        Console.WriteLine($"We added {LongSleeves.Name} to your cart");
+                        break;
+                    case Shiert.ShortSleeves:
+                        Subtotal += ShortSleeves.Price;
+                        addSubtotal = ShortSleeves.Price;
+                        Console.WriteLine($"We added {ShortSleeves.Name} to your cart");
+                        break;
+                    case Shiert.Sweaters:
+                        Subtotal += Sweaters.Price;
+                        addSubtotal = Sweaters.Price;
+                        Console.WriteLine($"We added {Sweaters.Name} to your cart");
+                        break;
+                    case Shiert.TShirts:
+                        Subtotal += TShirts.Price;
+                        addSubtotal = TShirts.Price;
+                        Console.WriteLine($"We added {TShirts.Name} to your cart");
+                        break;
+                }
+                
+                Console.WriteLine($"Press ENTER to continue or type EXIT to go to Department selection");
+                input = Console.ReadLine().ToLower();
 
-
+            } while (input != "exit");
         }
-
-
-
     }
 }
