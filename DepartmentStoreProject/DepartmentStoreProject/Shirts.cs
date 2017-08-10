@@ -24,7 +24,7 @@ namespace DepartmentStoreProject
             double addSubtotal = 0;
             Shirts LongSleeves = new Shirts();
 
-            LongSleeves.Name = "LongSleeves";
+            LongSleeves.Name = "Long Sleeves";
             LongSleeves.ID = 1;
             LongSleeves.Color = "Red/White";
             LongSleeves.Size = 9;
@@ -33,7 +33,7 @@ namespace DepartmentStoreProject
 
            Shirts ShortSleeves = new Shirts();
 
-            ShortSleeves.Name = "ShortSleeves";
+            ShortSleeves.Name = "Short Sleeves";
             ShortSleeves.ID = 2;
             ShortSleeves.Color = "Orange";
             ShortSleeves.Size = 10;
@@ -41,7 +41,7 @@ namespace DepartmentStoreProject
 
             Shirts TShirts = new Shirts();
 
-            TShirts.Name = "TShirts";
+            TShirts.Name = "T-Shirts";
             TShirts.ID = 3;
             TShirts.Color = "White";
             TShirts.Size = 12;
@@ -49,7 +49,7 @@ namespace DepartmentStoreProject
 
             Shirts ButtonUps = new Shirts();
 
-            ButtonUps.Name = "ButtonUps";
+            ButtonUps.Name = "Button Ups";
             ButtonUps.ID = 4;
             ButtonUps.Color = "Green";
             ButtonUps.Size = 7;
