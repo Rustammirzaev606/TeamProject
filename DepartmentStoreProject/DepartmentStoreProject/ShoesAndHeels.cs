@@ -69,7 +69,14 @@ namespace DepartmentStoreProject
             Footwear.Add(DressShoes.ID, DressShoes);
             Footwear.Add(TapShoes.ID, TapShoes);
 
+            Console.WriteLine("Here is our Shoe line:");
 
+            foreach (KeyValuePair<int, ShoesAndHeels> item in Footwear)
+            {
+                ShoesAndHeels asd = item.Value;
+                asd.Asd();
+
+            }
 
 
 

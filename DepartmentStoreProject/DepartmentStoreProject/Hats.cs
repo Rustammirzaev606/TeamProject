@@ -68,14 +68,15 @@ namespace DepartmentStoreProject
             HeadGear.Add(TopHats.ID, TopHats);
 
 
-            Console.WriteLine("Here is our hat line:");
-            foreach (KeyValuePair<int, Pants> item in Panties)
+            Console.WriteLine("Here is the line of hats we have:");
+
+            foreach(KeyValuePair<int, Hats> item in HeadGear)
             {
-                Pants asd = item.Value;
+                Hats asd = item.Value;
                 asd.Asd();
 
             }
-
+            Console.ReadLine();
         }
     }
 }
