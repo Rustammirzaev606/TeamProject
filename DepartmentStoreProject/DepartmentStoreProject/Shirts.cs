@@ -10,7 +10,8 @@ namespace DepartmentStoreProject
     {
         public void Someshirts()
         {
-            
+            int inputNumb;
+            string input;
             Shirts LongSleeves = new Shirts();
 
             LongSleeves.Name = "LongSleeves";
@@ -67,15 +68,32 @@ namespace DepartmentStoreProject
             shiet.Add(ButtonUps.ID, ButtonUps);
             shiet.Add(Sweaters.ID, Sweaters);
             shiet.Add(Hoodies.ID, Hoodies);
-            Console.WriteLine("Here is stuff we have:");
-            foreach (KeyValuePair<int, Shirts> item in shiet)
-            {
-                Shirts asd = item.Value;
-                asd.Asd();
+            do
+            { Console.WriteLine("Here is stuff we have:");
+                foreach (KeyValuePair<int, Shirts> item in shiet)
+                {
+                    Shirts asd = item.Value;
+                    asd.Asd();
 
-            }
-            Console.ReadLine();
+                }
+                input = Console.ReadLine();
+                int.TryParse(input, out inputNumb);
+                while (!(int.TryParse(input, out inputNumb)))
+                {
+                    Console.WriteLine("Wrong input. Select a number");
+                    foreach (KeyValuePair<int, Shirts> item in shiet)
+                    {
+                        Shirts asd = item.Value;
+                        asd.Asd();
+                        input = Console.ReadLine();
+                        int.TryParse(input, out inputNumb);
 
+                    }
+
+                }
+
+            } while (true);
+            
 
 
 

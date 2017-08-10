@@ -14,6 +14,9 @@ namespace DepartmentStoreProject
         public double Size { get; set; }
         public double Price { get; set; }
         public double Subtotal { get; set; }
+        public double Discount { get; set; }
+        public double DiscountRate { get; set; }
+        
 
         public void Asd()
         {

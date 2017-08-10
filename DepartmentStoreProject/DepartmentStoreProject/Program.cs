@@ -34,6 +34,7 @@ namespace DepartmentStoreProject
     {        
         static void Main(string[] args)
         {
+            
             Pants panties = new Pants();
             Shirts shierties = new Shirts();
             
