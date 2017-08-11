@@ -112,7 +112,7 @@ namespace DepartmentStoreProject
                 Console.WriteLine("Please select an item or type EXIT to return to main menu:");
                 input = Console.ReadLine();
                 int.TryParse(input, out inputNumb);
-                while (!int.TryParse(input, out inputNumb) || input != "e" || input != "exut")
+                while (!int.TryParse(input, out inputNumb) ^ input != "e" ^ input != "exut")
                 {
                     Console.WriteLine("Im sorry I do not understand. Please select a number or type EXIT to return to main menu");
                     foreach (KeyValuePair<int, ShoesAndHeels> item in Footwear)
