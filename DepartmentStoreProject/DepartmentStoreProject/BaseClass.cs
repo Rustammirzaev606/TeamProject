@@ -24,14 +24,14 @@ namespace DepartmentStoreProject
         {
             //Console.WriteLine(String.Format($"{ID}  {Name, 3}, {Color.PadLeft(30)}, {Size}, {Price.ToString("C")}"), 51);
             Console.Write(String.Format($"{ID}  {Name.PadRight(20, '.')}"));
-            Console.WriteLine($"{Color.PadRight(5, '.')}, {Size, 5}, {Price.ToString("C")}");
+            Console.WriteLine($" Color: {Color.PadRight(5, '.')}, Size: {Size, 5}, {Price.ToString("C")}");
         }
         public void PrintDiscount()
         {
             Savings += Price * DiscountRate;
             NewPrice = Price - Price * DiscountRate;
             Console.Write(String.Format($"{ID}  {Name.PadRight(20, '.')}"));
-            Console.WriteLine($"{Color.PadRight(5, '.')}, {Size,5}, {Price.ToString("C")}  **ATTENTION!!!** **SALES ITEM!!!** **{DiscountRate.ToString("P")} OFF!!!** **New Price!** {NewPrice.ToString("C")}!!!");
+            Console.WriteLine($" Color: {Color.PadRight(5, '.')}, Size: {Size,5}, {Price.ToString("C")}  **ATTENTION!!!** **SALES ITEM!!!** **{DiscountRate.ToString("P")} OFF!!!** **New Price!** {NewPrice.ToString("C")}!!!");
         }
     }
 }    

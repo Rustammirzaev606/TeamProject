@@ -29,7 +29,7 @@ namespace DepartmentStoreProject
 
             Slippers.Name = "Slippers";
             Slippers.ID = 1;
-            Slippers.Color = "Pink";
+            Slippers.Color = "Pink ";
             Slippers.Size = 6;
             Slippers.Price = 4.99;
 
@@ -109,12 +109,12 @@ namespace DepartmentStoreProject
                     }
 
                 }
-                Console.WriteLine("Please select an item.");
+                Console.WriteLine("Please select an item or type EXIT to return to main menu:");
                 input = Console.ReadLine();
                 int.TryParse(input, out inputNumb);
-                while (!int.TryParse(input, out inputNumb))
+                while (!int.TryParse(input, out inputNumb) ^ input == "e" ^ input == "exit")
                 {
-                    Console.WriteLine("Im sorry I do not understand. Please select a number.");
+                    Console.WriteLine("Im sorry I do not understand. Please select a number or type EXIT to return to main menu");
                     foreach (KeyValuePair<int, ShoesAndHeels> item in Footwear)
                     {
                         ShoesAndHeels ListOfFootwear = item.Value;
@@ -127,45 +127,56 @@ namespace DepartmentStoreProject
                             ListOfFootwear.PrintMethod();
                         }
                     }
-                    input = Console.ReadLine();
+                    input = Console.ReadLine().ToLower();
+                    if (input == "exit" || input == "e")
+                    {
+                        break;
+                    }
                     int.TryParse(input, out inputNumb);
 
                 }
-                switch ((ShoesEnum)inputNumb)
+                if (input == "exit" || input == "e")
                 {
-                    case ShoesEnum.Sneakers:
-                        Subtotal += Sneakers.Price;                        
-                        Console.WriteLine($"We have added {Sneakers.Name} to your cart.");
-                        break;
-                    case ShoesEnum.Boots:
-                        Subtotal += Boots.Price;                       
-                        Console.WriteLine($"We added {Boots.Name} to your cart.");
-                        break;
-                    case ShoesEnum.Sandals:
-                        Subtotal += Sandals.Price;                       
-                        Console.WriteLine($"We have added {Sandals.Name} to your cart.");
-                        break;
-                    case ShoesEnum.DressShoes:
-                        Subtotal += DressShoes.Price;                        
-                        Console.WriteLine($"We have added {DressShoes.Name} to your cart.");
-                        break;
-                    case ShoesEnum.TapShoes:
-                        Subtotal += TapShoes.NewPrice;
-                        Savings = TapShoes.Price - TapShoes.NewPrice;
-                        Console.WriteLine($"We have added {TapShoes.Name} to your cart.");
-                        break;
-                    case ShoesEnum.Slippers:
-                        Subtotal += Slippers.Price;                        
-                        Console.WriteLine($"We have added {Slippers.Name} to your cart.");
-                        break;
-                    default:
-                        Console.WriteLine("Im sorry I do not recognize your answer.");
-                        break;
 
+                    break;
                 }
+                {
+                    switch ((ShoesEnum)inputNumb)
+                    {
+                        case ShoesEnum.Sneakers:
+                            Subtotal += Sneakers.Price;
+                            Console.WriteLine($"We have added {Sneakers.Name} to your cart.");
+                            break;
+                        case ShoesEnum.Boots:
+                            Subtotal += Boots.Price;
+                            Console.WriteLine($"We added {Boots.Name} to your cart.");
+                            break;
+                        case ShoesEnum.Sandals:
+                            Subtotal += Sandals.Price;
+                            Console.WriteLine($"We have added {Sandals.Name} to your cart.");
+                            break;
+                        case ShoesEnum.DressShoes:
+                            Subtotal += DressShoes.Price;
+                            Console.WriteLine($"We have added {DressShoes.Name} to your cart.");
+                            break;
+                        case ShoesEnum.TapShoes:
+                            Subtotal += TapShoes.NewPrice;
+                            Savings = TapShoes.Price - TapShoes.NewPrice;
+                            Console.WriteLine($"We have added {TapShoes.Name} to your cart.");
+                            break;
+                        case ShoesEnum.Slippers:
+                            Subtotal += Slippers.Price;
+                            Console.WriteLine($"We have added {Slippers.Name} to your cart.");
+                            break;
+                        default:
+                            Console.WriteLine("Im sorry I do not recognize your answer.");
+                            break;
 
-                Console.WriteLine($"Press ENTER to continue or type EXIT to go back to the main store.");
-                input = Console.ReadLine().ToLower();
+                    }
+
+                    Console.WriteLine($"Press ENTER to continue or type EXIT to go back to the main store.");
+                    input = Console.ReadLine().ToLower();
+                }
 
             } while (input != "exit");
 
