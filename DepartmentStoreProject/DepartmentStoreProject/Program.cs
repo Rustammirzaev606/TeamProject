@@ -42,22 +42,28 @@ namespace DepartmentStoreProject
             
             string inputChoice;
             int inputNumb;
-            double total;
-            double savings;
+            double total = 0;
+            double savings = 0;
             
             
-            string exit;
+            string exit = "11";
             Console.WriteLine("Hello! Welcome to Rustam & Dorrell's Clothing Emporium!");
             do
             {
                 
                 Console.WriteLine("How may we assist you today? \n1 - Shoes:\n2 - Pants:\n3 - Shirts:\n4 - Hats:", 70);
-                inputChoice = Console.ReadLine();
+                inputChoice = Console.ReadLine().ToLower();
                 int.TryParse(inputChoice, out inputNumb);
-                while (!int.TryParse(inputChoice, out inputNumb))
+                while (!int.TryParse(inputChoice, out inputNumb))     //added choice to go to check out
                 {
-
-                    Console.WriteLine("I am sorry for the inconvenience, But I do not recognize your answer. Please select an appropriate department:\n1 - Shoes:\n2 - Pants:\n3 - Shirts:\n4 - Hats:");
+                    if (inputChoice == "c" ^ inputChoice == "check out" ^ inputChoice == "checkout")
+                    {
+                        exit = "checkout";                        
+                        break;
+                    }
+                    Console.WriteLine("I am sorry for the inconvenience, But I do not recognize your answer. Please select an appropriate department or type CHECK OUT to finish:\n1 - Shoes:\n2 - Pants:\n3 - Shirts:\n4 - Hats:"); //or type CHECK OUT to finish ADDED
+                    inputChoice = Console.ReadLine().ToLower();
+                    int.TryParse(inputChoice, out inputNumb);   // loop fixed
                 }
                 switch ((Genres)inputNumb)
                 {
@@ -73,14 +79,21 @@ namespace DepartmentStoreProject
                         shierties.Someshirts();
                         break;
                     case Genres.Hats:
-                        Console.WriteLine("123");
+                        haties.Somehat();
                         break;
                 }
-                Console.WriteLine("Press enter if you would like to continue shopping or type CHECK OUT if youre finish"); //needs changes
-                exit = Console.ReadLine().ToLower();
+                if (exit == "checkout")
+                {
+                    break;
+                }
+                else
+                {
+                    Console.WriteLine("Press ENTER if you would like to continue shopping or type CHECK OUT if youre finish:");
+                    exit = Console.ReadLine().ToLower();
+                }
                 total = ShoesAndHeels.Subtotal + panties.Subtotal + shierties.Subtotal + haties.Subtotal;
                 savings = shierties.Savings + panties.Savings + ShoesAndHeels.Savings + haties.Savings;
-            } while (exit == "checkout" ^ exit != "check out");
+            } while (exit != "checkout" ^ exit != "check out" ^ exit != "c");
             
             Console.WriteLine($"Your grand total comes to {total.ToString("C")}.You saved {savings.ToString("C")}!"); //needs changes. Math aint working yet.
             Console.WriteLine("Thank you for shopping with us here at the Rustam and Dorrell Clothing Emporium! We look forward to seeing you again. Have a fantastic day!!");

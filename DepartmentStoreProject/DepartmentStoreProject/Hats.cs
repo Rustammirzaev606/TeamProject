@@ -101,12 +101,12 @@ namespace DepartmentStoreProject
                    
 
                 }
-                Console.WriteLine("Please select an item.");
-                input = Console.ReadLine();
+                Console.WriteLine("Please select an item or type EXIT to return to main menu:");
+                input = Console.ReadLine().ToLower();
                 int.TryParse(input, out inputNumb);
-                while (!int.TryParse(input, out inputNumb))
+                while (!int.TryParse(input, out inputNumb) ^ input != "e" ^ input != "exit")
                 {
-                    Console.WriteLine("Im sorry I do not understand. Please select a number.");
+                    Console.WriteLine("Im sorry I do not understand. Please select a number or type EXIT to return to main menu:");
                     foreach (KeyValuePair<int, Hats> item in HeadGear)
                     {
                         Hats ListOfHats = item.Value;
@@ -120,51 +120,64 @@ namespace DepartmentStoreProject
                         }
 
 
+                    }                          
+
+                    input = Console.ReadLine().ToLower();
+                    if (input == "exit" || input == "e")
+                    {
+                        break;
                     }
-                    input = Console.ReadLine();
                     int.TryParse(input, out inputNumb);
 
                 }
-                switch ((HatsEnum)inputNumb)
+                if (input == "exit" || input == "e")
                 {
-                    case HatsEnum.BaseballCaps:
-                        Subtotal += BaseballCaps.Price;
-                        
-                        Console.WriteLine($"We have added {BaseballCaps.Name} to your cart.");
-                        break;
-                    case HatsEnum.Fedoras:
-                        Subtotal += BaseballCaps.Price;
-                        
-                        Console.WriteLine($"We have added {BaseballCaps.Name} to your cart.");
-                        break;
-                    case HatsEnum.Boaters:
-                        Subtotal += Boaters.Price;
-                        
-                        Console.WriteLine($"We have added {Boaters.Name} to your cart.");
-                        break;
-                    case HatsEnum.Beanies:
-                        Subtotal += Beanies.Price;
-                        
-                        Console.WriteLine($"We have added {Beanies.Name} to your cart.");
-                        break;
-                    case HatsEnum.Homburg:
-                        Subtotal += Homburg.Price;
-                        
-                        Console.WriteLine($"We have added {Homburg.Name} to your cart.");
-                        break;
-                    case HatsEnum.TopHats:
-                        Subtotal += NewPrice;
-                        Savings = TopHats.Price - TopHats.NewPrice;
-                        Console.WriteLine($"We have added {TopHats.Name} to your cart.");
-                        break;
-                    default:
-                        Console.WriteLine("Im sorry I do not recognize your response.");
-                        break;
-                }
 
-                Console.WriteLine($"Press ENTER to continue or type EXIT to go back to the main store.");
-                input = Console.ReadLine().ToLower();
-            } while (input != "exit");
+                    break;
+                }
+                else
+                {
+                    switch ((HatsEnum)inputNumb)
+                    {
+                        case HatsEnum.BaseballCaps:
+                            Subtotal += BaseballCaps.Price;
+
+                            Console.WriteLine($"We have added {BaseballCaps.Name} to your cart.");
+                            break;
+                        case HatsEnum.Fedoras:
+                            Subtotal += BaseballCaps.Price;
+
+                            Console.WriteLine($"We have added {BaseballCaps.Name} to your cart.");
+                            break;
+                        case HatsEnum.Boaters:
+                            Subtotal += Boaters.Price;
+
+                            Console.WriteLine($"We have added {Boaters.Name} to your cart.");
+                            break;
+                        case HatsEnum.Beanies:
+                            Subtotal += Beanies.Price;
+
+                            Console.WriteLine($"We have added {Beanies.Name} to your cart.");
+                            break;
+                        case HatsEnum.Homburg:
+                            Subtotal += Homburg.Price;
+
+                            Console.WriteLine($"We have added {Homburg.Name} to your cart.");
+                            break;
+                        case HatsEnum.TopHats:
+                            Subtotal += NewPrice;
+                            Savings = TopHats.Price - TopHats.NewPrice;
+                            Console.WriteLine($"We have added {TopHats.Name} to your cart.");
+                            break;
+                        default:
+                            Console.WriteLine("Im sorry I do not recognize your response.");
+                            break;
+                    }
+
+                    Console.WriteLine($"Press ENTER to continue or type EXIT to go back to the main store.");
+                    input = Console.ReadLine().ToLower();
+                }
+            } while (input != "exit" ^ input != "e");
         }   
     }
 }
