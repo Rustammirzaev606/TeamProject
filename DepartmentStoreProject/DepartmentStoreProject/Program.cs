@@ -101,7 +101,7 @@ namespace DepartmentStoreProject
             
             //method1
             //ask what item they want. Get input. Case choice. Add mathing price to subtotal. 
-
+            // argh
         
             
         }
