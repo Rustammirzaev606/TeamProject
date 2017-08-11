@@ -83,14 +83,14 @@ namespace DepartmentStoreProject
             Footwear.Add(DressShoes.ID, DressShoes);
             Footwear.Add(TapShoes.ID, TapShoes);
 
-            Console.WriteLine("Here is our Shoe line:");
+            //Console.WriteLine("Here is our Shoe line:");
 
-            foreach (KeyValuePair<int, ShoesAndHeels> item in Footwear)
-            {
-                ShoesAndHeels ListOfFootwear = item.Value;
-                ListOfFootwear.PrintMethod();
+            //foreach (KeyValuePair<int, ShoesAndHeels> item in Footwear)
+            //{
+            //    ShoesAndHeels ListOfFootwear = item.Value;
+            //    ListOfFootwear.PrintMethod();
 
-            }
+            //}
 
             do
             {
@@ -112,7 +112,7 @@ namespace DepartmentStoreProject
                 Console.WriteLine("Please select an item or type EXIT to return to main menu:");
                 input = Console.ReadLine();
                 int.TryParse(input, out inputNumb);
-                while (!int.TryParse(input, out inputNumb) ^ input == "e" ^ input == "exit")
+                while (!int.TryParse(input, out inputNumb) || input != "e" || input != "exut")
                 {
                     Console.WriteLine("Im sorry I do not understand. Please select a number or type EXIT to return to main menu");
                     foreach (KeyValuePair<int, ShoesAndHeels> item in Footwear)
@@ -132,14 +132,17 @@ namespace DepartmentStoreProject
                     {
                         break;
                     }
-                    int.TryParse(input, out inputNumb);
-
+                    else
+                    {
+                        int.TryParse(input, out inputNumb);
+                    }
                 }
                 if (input == "exit" || input == "e")
                 {
 
                     break;
                 }
+                else
                 {
                     switch ((ShoesEnum)inputNumb)
                     {
